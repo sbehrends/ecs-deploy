@@ -1,4 +1,4 @@
-FROM docker:latest
+FROM docker:git
 MAINTAINER Sergio Behrends <sergio@aerolab.co>
 
 RUN \
