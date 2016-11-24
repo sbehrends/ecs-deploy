@@ -1,4 +1,4 @@
-FROM docker:dind
+FROM docker:latest
 MAINTAINER Sergio Behrends <sergio@aerolab.co>
 
 RUN \
