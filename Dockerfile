@@ -1,13 +1,12 @@
-FROM silintl/ubuntu:14.04
-MAINTAINER Phillip Shipley <phillip_shipley@sil.org>
+FROM docker:dind
+MAINTAINER Sergio Behrends <sergio@aerolab.co>
 
-RUN apt-get update -y \
-    && apt-get install -y \
-        curl \
-        python-setuptools \
-        jq \
-    && easy_install pip \
-    && pip install awscli
+RUN \
+  apk update && \
+  apk upgrade && \
+  apk add bash curl py-pip jq && \
+  rm -rf /var/cache/apk/* && \
+  pip install awscli
 
 COPY ecs-deploy /usr/local/bin/ecs-deploy
 
